@@ -1,43 +1,66 @@
 "use strict";
 
-let input = document.getElementById("searchbox")
 
 // filter all students from database and return the firs& lastname that includes input value
 function getStudent() {
-    let student = DATABASE.students
-    .filter((student) => student.lastName.toLowerCase().includes(input.value))
-    .map((student) => student.firstName + "" + student.lastName);
+    let input = document.getElementById("searchbox");
+    let students = DATABASE.students
+        .filter((student) => student.lastName.toLowerCase().includes(input.value.toLowerCase()))
 
-    return student;
+        .map(student => student)
+        
+
+    return students;
 }
 
-input.addEventListener("keyup", function () {
-    let findStudent = getStudent();
-    let allText = document.getElementById("students");
-    allText.innerHTML = "";
-    runCreateHTML(findStudent);
+function keyUp(){
+let input = document.getElementById("searchbox")
+input.addEventListener("keyup", runCreateHTML ) 
+}
 
-    if (input.value == 0) {
-        allText.innerHTML = "";
-
-    }
-})
-
-function createHTML(student) {
+function createHTML(student, totalCredit) {
 
     let studentName = document.getElementById("students");
     let div = document.createElement("div");
+    div.classList = "allstudents";
     div.innerHTML = `
-    ${student} 
+    <p>${student.firstName + " " + student.lastName} </p>
+    <p>(Total : ${totalCredit} Credits)</p>
 
     `
     studentName.append(div);
-    
+
 
 }
 
-function runCreateHTML(students) {
+function runCreateHTML() {
+    let allText = document.getElementById("students");
+    let students = getStudent() ;
+    allText.innerHTML = "";
+    
     for (let student of students) {
-        createHTML(student)
+        let credits = getTotalCredit(student.courses)
+        createHTML (student,credits)
     }
 }
+
+
+function getTotalCredit(courses) {
+    let totalCredit = 0;
+    courses.forEach (course => {
+        totalCredit += course.passedCredits
+    })
+    return totalCredit;
+}
+
+keyUp ();
+
+
+
+
+        
+
+
+           
+
+

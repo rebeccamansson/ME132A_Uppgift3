@@ -1,0 +1,19 @@
+body{
+    margin-top: 3vh;
+}
+
+
+
+.allstudents{
+    height: 30vh;
+   
+    padding-top: 5vh;
+    background-color: lavender;
+    border: solid 1px black;
+}
+   
+
+
+p{
+    padding-left: 5vh;
+}
