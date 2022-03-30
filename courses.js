@@ -44,7 +44,8 @@ function runCreateHTML() {
   for (let course of courses) {
     createHTML(course)
     getAllStudents(course)
-    getTeachers(courses)
+    getTeachers(course)
+    getCourseResponsible(course)
 
 
   }
@@ -81,7 +82,7 @@ function getAllStudents(course) {
   return
 }
 
-function getTeachers(courses) {
+function getTeachers(course) {
   let allText = document.getElementById("courses");
   let allTeachers = document.createElement("div");
   allTeachers.classList.add("teachersbox");
@@ -89,21 +90,48 @@ function getTeachers(courses) {
 
 
   for (let i = 0; i < DATABASE.teachers.length; i++) {
-    for (let j = 0; j < courses[i].teachers.length; j++) {
-      if (DATABASE.teachers[i].teacherId == courses[j].teacherId[j]) {
+    for (let j = 0; j < course.teachers.length; j++) {
+      if (DATABASE.teachers[i].teacherId == course.teachers[j]) {
         let div = document.createElement("div");
         div.classList.add("allteachers");
         div.innerHTML =
           `
-          <p>${DATABASE.teachers.firstName} ${DATABASE.teachers.lastName} 
+          <p> ${DATABASE.teachers[i].firstName} ${DATABASE.teachers[i].lastName} (${DATABASE.teachers[i].post} )
           </p>
 `
+allTeachers.appendChild (div)
 
       }
     }
   }
   return
 }
+
+function getCourseResponsible(course) {
+  let allText = document.getElementById("courses");
+  let allResponsibles = document.createElement("div");
+  allResponsibles.classList.add("resbonsiblebox");
+  allText.appendChild( allResponsibles);
+
+
+  for (let i = 0; i < DATABASE.teachers.length; i++) {
+    
+      if (DATABASE.teachers[i].teacherId == course.courseResponsible){
+        let div = document.createElement("div");
+        div.classList.add("allresponsibles");
+        div.innerHTML =
+          `
+          <p> ${DATABASE.teachers[i].firstName} ${DATABASE.teachers[i].lastName}  (${DATABASE.teachers[i].post} )
+          </p>
+`
+allResponsibles.appendChild (div)
+
+      }
+    }
+  
+  return
+}
+8
 
 
 keyUp();

@@ -30,4 +30,25 @@ body{
 
 }
 
+.allteachers{
+  
+    width: fit-content;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
    
+
+}
+.allteachers > p{
+    margin: 6px;
+
+}
+
+.allresponsibles{
+    width: fit-content;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    border: 5px solid white;
+    background-color: tomato;
+}
