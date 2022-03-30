@@ -1,0 +1,33 @@
+body{
+    margin-top: 3vh;
+}
+
+
+
+.allcourses{
+    height:fit-content;
+    display: flex;
+    align-items: center;
+   
+    padding-top: 5vh;
+    /* background-color: lavender; */
+    
+}
+
+.studentcourse{
+    background-color: rgb(200, 211, 216);
+    border: black solid 0.5px;
+    width: fit-content;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    border: 5px solid white;
+    
+}
+
+.studentcourse > p{
+    margin: 6px;
+
+}
+
+   
