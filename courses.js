@@ -1,5 +1,7 @@
 "use strict";
 
+let input = document.getElementById("searchbox");
+
 function getCourses() {
   let input = document.getElementById("searchbox");
   let courses = DATABASE.courses
@@ -43,6 +45,11 @@ function createHTML(course) {
 
   `
   courseName.append(div);
+
+  if (input.value == 0) {
+    courseName.innerHTML = "";
+
+}
 
 
 }
@@ -94,6 +101,11 @@ function getAllStudents(course) {
         }
 
         allStudents.appendChild(div);
+
+        if (input.value == 0) {
+          allText.innerHTML = "";
+      
+      }
       }
     }
 
@@ -128,6 +140,11 @@ function getTeachers(course) {
 `
         allTeachers.appendChild(div)
 
+        if (input.value == 0) {
+          allText.innerHTML = "";
+      
+      }
+
       }
     }
   }
@@ -161,6 +178,11 @@ function getCourseResponsible(course) {
           </p>
 `
       allResponsibles.appendChild(div)
+
+      if (input.value == 0) {
+        allText.innerHTML = "";
+    
+    }
 
     }
   }

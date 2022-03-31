@@ -1,5 +1,5 @@
 "use strict";
-
+let input = document.getElementById("searchbox");
 
 // filter all students from database and return the firs& lastname that includes input value
 function getStudent() {
@@ -42,8 +42,13 @@ function createHTML(student, totalCredit) {
 
 
     `
+
     studentName.append(div);
 
+    if (input.value == 0) {
+        studentName.innerHTML = "";
+
+    }
 
 }
 
@@ -93,6 +98,11 @@ function getCourseTitle(student) {
                     div.style.background = "rgb(135,206,235)";
                 }
                 allCourses.appendChild(div);
+
+                if (input.value == 0) {
+                    allText.innerHTML = "";
+            
+                }
 
             }
         }
