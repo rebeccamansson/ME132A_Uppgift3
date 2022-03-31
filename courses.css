@@ -1,6 +1,26 @@
 body{
     margin-top: 3vh;
+    font-family: Oxygen;
+    background-color: rgba(0, 0, 0, 0.815);
+    height: 100vh;   
 }
+
+h1{
+    color: whitesmoke;
+    text-shadow: 2px 2px #131212;
+}
+
+h2{
+    color: whitesmoke;
+    text-shadow: 2px 2px #131212;
+}
+#header{
+    color: whitesmoke;
+    text-shadow: 2px 2px #131212;
+    font-size: 20px;
+
+}
+
 
 
 
@@ -20,28 +40,31 @@ body{
     width: fit-content;
     display: inline-flex;
     flex-wrap: wrap;
-    gap: 12px;
-    border: 5px solid white;
+    margin: 5px;
     
 }
 
 .studentcourse > p{
     margin: 6px;
+    
 
 }
 
 .allteachers{
   
     width: fit-content;
-    display: inline-flex;
     flex-wrap: wrap;
     gap: 12px;
+    display: flex;
+    align-items: center;
+   
    
 
 }
 .allteachers > p{
-    margin: 6px;
-
+ margin: 0;
+ background-color: rgb(200, 211, 216);
+ border: 5px solid rgb(200, 211, 216)
 }
 
 .allresponsibles{
@@ -49,6 +72,46 @@ body{
     display: inline-flex;
     flex-wrap: wrap;
     gap: 12px;
-    border: 5px solid white;
-    background-color: tomato;
+
+
+}
+
+.teachersbox{
+    padding-top: 5px;
+    width: fit-content;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+ 
+}
+
+.teachersbox > div{
+    padding-left: 5px;
+
+}
+
+.resbonsiblebox{
+    
+    width: fit-content;
+    flex-wrap: wrap;
+    gap: 12px;
+    display: flex;
+    align-items: center
+
+}
+.resbonsiblebox > div{
+    padding-left: 5px;
+
+}
+
+.allresponsibles > p{
+    margin: 0;
+    background-color: rgb(95, 120, 148);
+    border: 5px solid rgb(95, 120, 148);
+}
+
+.studentboxes > p{
+    color: whitesmoke;
+    text-shadow: 2px 2px #131212;
+
 }

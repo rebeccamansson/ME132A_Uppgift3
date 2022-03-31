@@ -10,10 +10,10 @@ function getStudent() {
         .map(student => student)
 
         .sort(function (a, b) {
-            if (a.firstName < b.firstName) {
+            if (a.lastName < b.lastName) {
                 return -1
             }
-            if (a.firstName > b.firstName) {
+            if (a.lastName > b.lastName) {
                 return 1
             }
             return 0
@@ -36,8 +36,8 @@ function createHTML(student, totalCredit) {
     div.classList = ("allstudents");
     div.innerHTML = `
     <h1>${student.firstName + " " + student.lastName} 
-    (Total : ${totalCredit} Credits)</h1> 
-    <h2>Courses:</h2>
+    (Total : ${totalCredit} Credits) <br> 
+    Courses:</h1>
 
 
 
@@ -90,18 +90,22 @@ function getCourseTitle(student) {
             
                 `
                 if (studentC.passedCredits == courseC.totalCredits) {
-                    div.style.background = "rgb(152,251,152)";
+                    div.style.background = "rgb(135,206,235)";
                 }
                 allCourses.appendChild(div);
+
             }
         }
 
     }
     return
 
+   
+
 
 }
 keyUp();
+
 
 
 
